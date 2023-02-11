@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
+    [Header("Rigidbody")]
+    public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
