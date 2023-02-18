@@ -16,10 +16,10 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         //if target y pos is greater than camera pos
-        if(target.position.y > transform.position.x)
+        if(target.position.y > transform.position.y)
         {
             //camera follows target
-            transform.position = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
+            transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
         }
     }
 }

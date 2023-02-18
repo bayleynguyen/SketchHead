@@ -16,6 +16,11 @@ public class PlayerControls : MonoBehaviour
     [Header("Default Directional Movement Speed")]
     //movement direction of the object
     public float movement = 0f;
+    //font text
+    [Header("Score Text")]
+    public Text scoreText;
+    //score of game
+    private float topScore = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +43,17 @@ public class PlayerControls : MonoBehaviour
         else
         {
             //object faces to the right
-            this.GetComponent<SpriteRenderer>().flipX = (true);
+            this.GetComponent<SpriteRenderer>().flipX = true;
         }
+
+        //if players velocity is greater than 0 and position on y axis is greater than score
+        if (rb.velocity.y > 0 && transform.position.y > topScore)
+        {
+            //score equals to players position
+            topScore = transform.position.y;
+        }
+        //text for the score equals to the top score
+        scoreText.text = "Score: " + Mathf.Round(topScore).ToString();
     }
 
     //Fixedupdate called every fixed fram rate frame
