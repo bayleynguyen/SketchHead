@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
     {
         //spawn platforms randomly on x axis and place them on the y axis every 2.5
         Instantiate(platform, new Vector3(Random.value * 10 - 5f, pos, 0.5f), Quaternion.identity);
-        pos += 2.5f;
+        pos += 3.5f;
     }
 
     // Update is called once per frame
